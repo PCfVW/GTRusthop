@@ -1,0 +1,54 @@
+[package]
+name = "gtrusthop"
+version = "1.2.1"
+edition = "2021"
+authors = ["Eric Jacopin <eric.jacopin@protonmail.com>", "Dana Nau <nau@umd.edu>"]
+description = "A Goal-Task-Network planning package written in Rust, ported from GTPyhop"
+license = "Apache-2.0"
+repository = "https://github.com/PCfVW/GTRusthop"
+keywords = ["planning", "htn", "artificial-intelligence", "automated-planning"]
+categories = ["algorithms", "science"]
+readme = "README.md"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+indexmap = { version = "2.0", features = ["serde"] }
+rand = "0.8"
+
+[[bin]]
+name = "gtrusthop"
+path = "src/main.rs"
+
+[dev-dependencies]
+criterion = "0.5"
+
+[profile.release]
+# Optimize for performance
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[profile.dev]
+# Faster compilation for development
+opt-level = 0
+debug = true
+overflow-checks = true
+
+[profile.test]
+# Optimize tests for faster execution
+opt-level = 2
+debug = true
+
+[profile.bench]
+# Optimize benchmarks for maximum performance
+opt-level = 3
+lto = true
+codegen-units = 1
+debug = false
+
+[[bench]]
+name = "planning_strategy_benchmark"
+harness = false
