@@ -703,4 +703,5 @@ Dana Nau's original Python projects:
 
 - [GTPyhop](https://github.com/dananau/GTPyhop): Original Python implementation
 - [Pyhop](https://github.com/dananau/pyhop): Classical HTN planner in Python
-- [SHOP2](https://www.cs.umd.edu/projects/shop/): Simple Hierarchical Ordered Planner
+
+[Home page for the SHOP, JSHOP, SHOP2, and JSHOP2](https://www.cs.umd.edu/projects/shop/): Simple Hierarchical Ordered Planners
